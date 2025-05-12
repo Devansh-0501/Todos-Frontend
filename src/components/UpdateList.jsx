@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import "../styles/updateList.css"
 
 const UpdateList = ({ id }) => {
   const [uniList, setUniList] = useState({
