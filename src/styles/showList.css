@@ -1,0 +1,95 @@
+/* .listDisplay {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  width: 50%;
+}
+.singleList{
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(122, 34, 34);
+} */
+
+.listDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  /* background-color: #f5f5f5; */
+}
+
+.singleList {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  min-width: 250px;
+  max-width: 300px;
+  flex: 1;
+}
+
+.singleList h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.singleList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.singleList li {
+  background-color: #e9ecef;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  padding: 10px;
+  font-size: 0.95rem;
+  color: #212529;
+  transition: background-color 0.2s ease;
+}
+
+.singleList li:hover {
+  background-color: #dee2e6;
+}
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.editBtn,
+.deleteBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.editBtn {
+  color: #0d6efd;background-color: #d0e3ff;
+}
+
+
+
+.deleteBtn {
+  color: #dc3545; background-color: #f8d7da;
+}
+
+
+
