@@ -58,7 +58,9 @@ const UpdateList = ({ id }) => {
       </div>
 
       <div id="cardInputs">
+        <span>Update Cards</span>
         {uniList.card.map((card, index) => (
+            
           <input
             key={index}
             type="text"
