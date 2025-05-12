@@ -1,5 +1,4 @@
-import React,{useState,useEffect} from 'react'
-import axios from 'axios'
+
 import '../styles/home.css'
 import CreateList from './CreateList'
 import ShowList from './ShowList'

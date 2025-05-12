@@ -11,7 +11,7 @@ const CreateList = () => {
         };
     
         try {
-        const response = await axios.post("http://localhost:3000/api/create", data);
+        const response = await axios.post("https://todosbackend-0gka.onrender.com/api/create", data);
         console.log(response.data);
         } catch (error) {
         console.error("Error creating list:", error);

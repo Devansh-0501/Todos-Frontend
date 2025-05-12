@@ -10,7 +10,7 @@ const UpdateList = ({ id }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/uniList/${id}`)
+      .get(`https://todosbackend-0gka.onrender.com/api/uniList/${id}`)
       .then((response) => {
         console.log(response.data);
         setUniList(response.data.data);
@@ -23,7 +23,7 @@ const UpdateList = ({ id }) => {
   const handleSubmit = (e) => {
      
     axios
-      .put(`http://localhost:3000/api/update/${uniList._id}`, uniList)
+      .put(`https://todosbackend-0gka.onrender.com/api/update/${uniList._id}`, uniList)
       .then((response) => {
         console.log("Updated:", response.data);
         // optionally reset or close modal

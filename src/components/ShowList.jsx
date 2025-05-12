@@ -11,7 +11,7 @@ const ShowList = () => {
       const [listId,setListId]=useState("");
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/read')
+        axios.get('https://todosbackend-0gka.onrender.com/api/read')
         .then((response) => {
             console.log(response.data);
             setReadData(response.data.data)
@@ -23,7 +23,7 @@ const ShowList = () => {
     , [])
 
     const handleDelete = (id) =>{
-        axios.delete(`http://localhost:3000/api/delete/${id}`)
+        axios.delete(`https://todosbackend-0gka.onrender.com/api/delete/${id}`)
         .then((response) => {
             console.log(response.data);
             setReadData(response.data.data);
