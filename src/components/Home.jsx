@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import '../styles/home.css'
-import CreateList from './CreateList'
+
 import ShowList from './ShowList'
 
 const Home = () => {
@@ -23,9 +23,10 @@ const Home = () => {
 
   return (
     <div className='home'>
-        <button onClick={handleLogout}>logout</button>
-        <CreateList />
-        <ShowList />
+       
+        
+        <ShowList /> 
+        <button className='logout-button' onClick={handleLogout}>logout</button>
        
        
     </div>

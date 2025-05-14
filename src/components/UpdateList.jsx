@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useEffect } from "react";
-import "../styles/updateList.css"
+import "../styles/updateList.css";
 
-const UpdateList = ({ id }) => {
+const UpdateList = ({ id, onUpdate, onClose }) => {
   const [uniList, setUniList] = useState({
     list: "",
     card: [""], // Start with one card input
   });
 
   useEffect(() => {
+    // Fetch the list data when the component mounts or the id changes
     axios
       .get(`https://todosbackend-0gka.onrender.com/api/uniList/${id}`)
       .then((response) => {
@@ -22,12 +22,24 @@ const UpdateList = ({ id }) => {
   }, [id]);
 
   const handleSubmit = (e) => {
-     
+    e.preventDefault();
+    
+    if (!uniList._id) {
+      console.error("No list ID to update");
+      return;
+    }
+    
+
+    // PUT request to update the list
     axios
       .put(`https://todosbackend-0gka.onrender.com/api/update/${uniList._id}`, uniList)
       .then((response) => {
         console.log("Updated:", response.data);
-        // optionally reset or close modal
+
+        // Call the onUpdate callback to refresh the parent state
+        if (onUpdate) onUpdate(); // onUpdate can be used to refresh the parent component
+        if (onClose) onClose();
+        // Optionally reset or close modal
       })
       .catch((error) => {
         console.error("Error updating list:", error);
@@ -60,7 +72,6 @@ const UpdateList = ({ id }) => {
       <div id="cardInputs">
         <span>Update Cards</span>
         {uniList.card.map((card, index) => (
-            
           <input
             key={index}
             type="text"

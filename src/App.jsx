@@ -1,8 +1,11 @@
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import axios from "axios";
 import User from "./components/User";
 import SignUp from "./components/SignUp";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+axios.defaults.withCredentials = true;
 
 const App = () => {
   return (

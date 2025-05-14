@@ -1,9 +1,36 @@
-.home {
-  /* background-color: bisque; */
+/* .home {
+ 
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
+} */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  /* background-color: #f4f4f9; */
+  min-height: 100vh;
 }
 
+/* Logout Button */
+.logout-button {
+  background-color: #ff4d4d; /* Red color for the logout button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Logout Button Hover Effect */
+.logout-button:hover {
+  background-color: #e60000; /* Darker red for hover */
+}
