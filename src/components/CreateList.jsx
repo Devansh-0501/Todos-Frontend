@@ -15,7 +15,8 @@ const CreateList = ({ onNewList }) => {
     try {
       const response = await axios.post(
         "https://todosbackend-0gka.onrender.com/api/create",
-        data
+        data,
+        {withCredentials: true}
       );
       console.log(response.data);
       event.target.reset(); // ✅ clear form
