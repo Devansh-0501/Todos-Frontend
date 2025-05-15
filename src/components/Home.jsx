@@ -10,7 +10,7 @@ const Home = () => {
     try {
       await axios.post(
         "https://todosbackend-0gka.onrender.com/api/logout",
-         {withCredentials: true}
+         {},{withCredentials: true}
         
       );
       navigate("/"); // 👈 redirect to login page after logout

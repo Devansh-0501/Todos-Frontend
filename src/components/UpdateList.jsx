@@ -11,7 +11,7 @@ const UpdateList = ({ id, onUpdate, onClose }) => {
   useEffect(() => {
     // Fetch the list data when the component mounts or the id changes
     axios
-      .get(`https://todosbackend-0gka.onrender.com/api/uniList/${id}` ,{withCredentials: true})
+      .get(`https://todosbackend-0gka.onrender.com/api/uniList/${id}` ,{},{withCredentials: true})
       .then((response) => {
         console.log(response.data);
         setUniList(response.data.data);

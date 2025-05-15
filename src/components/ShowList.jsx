@@ -17,7 +17,7 @@ const ShowList = () => {
   const fetchLists = () => {
     
     axios
-      .get("https://todosbackend-0gka.onrender.com/api/read") ,{withCredentials: true}
+      .get("https://todosbackend-0gka.onrender.com/api/read") ,{},{withCredentials: true}
       .then((response) => {
        
         console.log(response.data);
