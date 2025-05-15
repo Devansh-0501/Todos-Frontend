@@ -14,19 +14,18 @@ const ShowList = () => {
 };
 
   // Function to fetch lists
-  const fetchLists = () => {
+  const fetchLists = async () => {
     
-    axios
-      .get("https://todosbackend-0gka.onrender.com/api/read") ,{withCredentials: true}
-      .then((response) => {
-       
-        console.log(response.data);
-        setReadData(response.data.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  };
+    try {
+    const response = await axios.get("https://todosbackend-0gka.onrender.com/api/read", {
+      withCredentials: true,
+    });
+    console.log(response.data);
+    setReadData(response.data.data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
 
   useEffect(() => {
     fetchLists(); // Fetch lists on mount
@@ -34,7 +33,7 @@ const ShowList = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://todosbackend-0gka.onrender.com/api/delete/${id}`)
+      .delete(`https://todosbackend-0gka.onrender.com/api/delete/${id}`,{withCredentials:true})
       .then((response) => {
         console.log(response.data);
         // Refetch the lists after deletion
