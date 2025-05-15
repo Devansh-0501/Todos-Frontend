@@ -32,7 +32,7 @@ const UpdateList = ({ id, onUpdate, onClose }) => {
 
     // PUT request to update the list
     axios
-      .put(`https://todosbackend-0gka.onrender.com/api/update/${uniList._id}`, uniList)
+      .put(`https://todosbackend-0gka.onrender.com/api/update/${uniList._id}`, uniList,{withCredentials: true})
       .then((response) => {
         console.log("Updated:", response.data);
 
