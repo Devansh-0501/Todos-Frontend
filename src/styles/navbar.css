@@ -2,33 +2,38 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #33839e; /* slightly softened */
+  background: rgba(31, 31, 31, 0.85); /* semi-transparent dark */
   padding: 0 2rem;
-  height: 60px;
-  border-radius: 12px;
-  font-size: 1.5rem;
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 64px;
+  /* border-radius: 16px; */
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* margin: 1rem; */
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 .links {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1.25rem;
 }
 
 .links a {
   text-decoration: none;
-  color: #ffffff;
+  color: #f1f1f1;
   font-weight: 500;
   font-size: 1rem;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
 
 .links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #f1f5f9;
+  background-color: rgba(99, 102, 241, 0.2); /* same as login-form button highlight */
+  color: #cbd5e1;
+  transform: translateY(-2px);
 }

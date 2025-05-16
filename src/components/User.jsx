@@ -1,8 +1,27 @@
 import "../styles/user.css"
+import { useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // ✅ import this
 
 const User = () => {
+ useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        await axios.get(
+          'https://todosbackend-0gka.onrender.com/api/verify',
+          { withCredentials: true }
+        );
+        // ✅ If authenticated, redirect to Home
+        navigate('/home');
+      } catch (err) {
+        // ❌ Not authenticated, stay on login page
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  
   const navigate = useNavigate(); // ✅ get navigation function
 
   const handleLogin = async (event) => {

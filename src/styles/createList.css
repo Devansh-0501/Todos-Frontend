@@ -1,5 +1,5 @@
 form {
-  background-color: #fff;
+  background-color: #34137962;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -13,9 +13,11 @@ label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  color: white;
 }
 
 input[type="text"] {
+  background-color: #e9ecef;
   width: 100%;
   padding: 0.7rem;
   margin-bottom: 1.5rem;

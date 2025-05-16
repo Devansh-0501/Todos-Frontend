@@ -39,14 +39,17 @@ const Home = () => {
     }
   };
 
-  return (
-    <div className='home'>
-      <ShowList />
+ return (
+  <div className='home'>
+    <div className="home-header">
+      <h1>Welcome to Your Dashboard</h1>
       <button className='logout-button' onClick={handleLogout}>
         Logout
       </button>
     </div>
-  );
+    <ShowList />
+  </div>
+);
 };
 
 export default Home;
