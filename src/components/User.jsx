@@ -1,28 +1,26 @@
-import "../styles/user.css"
+import "../styles/user.css";
 import { useEffect } from "react";
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // ✅ import this
+import { useNavigate } from 'react-router-dom';
 
 const User = () => {
- useEffect(() => {
+  const navigate = useNavigate(); // ✅ Move this above useEffect
+
+  useEffect(() => {
     const checkAuth = async () => {
       try {
         await axios.get(
           'https://todosbackend-0gka.onrender.com/api/verify',
           { withCredentials: true }
         );
-        // ✅ If authenticated, redirect to Home
-        navigate('/home');
+        navigate('/home'); // ✅ Now navigate is defined
       } catch (err) {
         // ❌ Not authenticated, stay on login page
       }
     };
 
     checkAuth();
-  }, []);
-
-  
-  const navigate = useNavigate(); // ✅ get navigation function
+  }, [navigate]); // ✅ Good practice to add navigate in dependency array
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -35,18 +33,15 @@ const User = () => {
     try {
       const response = await axios.post(
         "https://todosbackend-0gka.onrender.com/api/login",
-        userData
-         ,{withCredentials: true}
-       
+        userData,
+        { withCredentials: true }
       );
 
       console.log("Login successful:", response.data);
-
-      // ✅ Redirect to dashboard or homepage
-      navigate("/home"); // change this path to whatever route you want
+      navigate("/home");
     } catch (error) {
       console.error("Login failed:", error.response?.data?.message || error.message);
-      navigate("/signUp")
+      navigate("/signUp");
     }
   };
 
